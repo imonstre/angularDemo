@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     // ...
    // https://angulardemowelcome.azurewebsites.net/
-    this.http.get("https://angulardemowelcome.azurewebsites.net/api/SendEmail?").subscribe(data=>{
+    this.http.post("https://angulardemowelcome.azurewebsites.net/api/SendEmail?",{to:"me",from:"you",subject:"subjectofmail",body:"hellobody"}).subscribe(data=>{
      console.log(JSON.stringify(data));
     });
   }
